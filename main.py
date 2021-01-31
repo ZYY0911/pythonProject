@@ -16,9 +16,7 @@ d.app_start('cn.xuexi.android')
 d(text='我的', className='android.widget.TextView').click()
 # d(text='学习积分', className='android.widget.TextView').click()
 d(text='我要答题', className='android.widget.TextView').click()
-d.xpath(
-    "//android.view.View[@text='挑战对抗磨练答题技能']/following-sibling::android.view.View/following-sibling::android.view.View//following-sibling::android.view.View//following-sibling::android.view.View").click()
-
+d.xpath("//android.view.View[@text='挑战对抗磨练答题技能']/following-sibling::android.view.View/following-sibling::android.view.View//following-sibling::android.view.View//following-sibling::android.view.View").click()
 j = 0
 while j <= 6:
     try:
@@ -26,7 +24,7 @@ while j <= 6:
         print(info_content)
         options = []
         option_elements = d.xpath("//android.widget.ListView//android.widget.RadioButton/following-sibling::android.view.View[1]").all()
-        res = getAns(info_content, 0)
+        res = getAns(info_content, 0,"")
         option = res[0]
         if j == 6:
             index = ziparr.index(option)
@@ -49,7 +47,6 @@ while j <= 6:
         else:
             print("回答正确")
             j = j + 1
-        time.sleep(3)
     except Exception:
         j = j - 1
         continue

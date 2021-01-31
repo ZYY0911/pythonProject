@@ -26,7 +26,6 @@ i = 0
 while i <= 5:
     try:
         info_content = str(d.xpath("//android.widget.ListView/preceding-sibling::android.view.View[1]").get_text())
-        options = []
         option_elements = d.xpath(
             "//android.widget.ListView//android.widget.RadioButton/following-sibling::android.view.View[1]").all()
         options_A = str(d.xpath(
@@ -42,13 +41,13 @@ while i <= 5:
             option_elements[2].click()
         elif option == 'D':
             option_elements[3].click()
-            i = i + 1
-        time.sleep(2)
+        i = i + 1
+        time.sleep(3)
     except Exception:
         if len(option_elements) > 0:
             option_elements[0].click()
             i = i + 1
-            time.sleep(2)
+            time.sleep(3)
         continue
     finally:
         if d.xpath("//android.view.View[@text='继续挑战']").exists:

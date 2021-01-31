@@ -18,7 +18,6 @@ def mycaleng():
     while i < 5:
         try:
             info_content = str(d.xpath("//android.widget.ListView/preceding-sibling::android.view.View[1]").get_text())
-
             option_elements = d.xpath(
                 "//android.widget.ListView//android.widget.RadioButton/following-sibling::android.view.View[1]").all()
             options_A = str(d.xpath(
