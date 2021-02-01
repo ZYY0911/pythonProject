@@ -73,7 +73,7 @@ while i <= 6:
         el = d.xpath('//*[@resource-id="cn.xuexi.android:id/general_card_title_id"]').all()
         msgTitle = el[1].info.get("text")
         if befortitle == msgTitle:
-            el[2].info.get("text")
+            msgTitle = el[2].info.get("text")
         else:
             d.xpath(msgTitle).click()
             time.sleep(20)
