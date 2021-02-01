@@ -16,6 +16,10 @@ def getAns(msg, isture, optionA):
             new_str_a_1 = optionA.split('.')[1]
             new_str_a = ''.join(new_str_a_1.split())
             sql = "SELECT * FROM data3 where content like '%" + new_str1 + "%' and options like '%" + new_str_a + "%'"
+        elif isture==10:
+            new_str_a_1 = optionA.split('.')[1]
+            new_str_a = ''.join(new_str_a_1.split())
+            sql = "SELECT * FROM data3 where content like '%" + new_str1 + "%' and options like '%" + new_str_a + "%'"
         else:
             sql = "SELECT * FROM data3 where content like '%" + new_str1 + "%'"
     else:

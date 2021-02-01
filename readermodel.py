@@ -108,14 +108,14 @@ while i <= 6:
             el[2].info.get("text")
         else:
             d.xpath(msgTitle).click()
-            time.sleep(10)
-            print("10秒")
-            d.swipe_ext(Direction.FORWARD)
-            time.sleep(10)
-            print("20秒")
-            d.swipe_ext(Direction.FORWARD)
-            time.sleep(15)
-            print("35秒")
+            time.sleep(3)
+            print("3秒")
+            # d.swipe_ext(Direction.FORWARD)
+            time.sleep(3)
+            print("6秒")
+            # d.swipe_ext(Direction.FORWARD)
+            time.sleep(3)
+            print("9秒")
             print("学习完" + msgTitle)
         befortitle = msgTitle
         i = i + 1

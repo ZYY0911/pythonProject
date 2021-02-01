@@ -40,23 +40,28 @@ while j <= 6:
             option_elements[2].click()
         elif option == 'D':
             option_elements[3].click()
-        if d.xpath("//*[@text='分享就能复活']").exists:
+        if d.xpath("//*[@text='分享就能复活']").exists and j != 6:
             d.xpath("//android.view.View[@text='分享就能复活']").click()
             d.keyevent("back")
             print("回答错误")
         else:
             print("回答正确")
             j = j + 1
-            time.sleep(2)
+            time.sleep(1)
     except Exception:
-        j = j - 1
+        time.sleep(2)
         continue
     finally:
         print(j)
+time.sleep(2)
 if d.xpath("//android.view.View[@text='结束本局']").exists:
     d.xpath("//android.view.View[@text='结束本局']").click()
+    time.sleep(1)
 d.keyevent("back")
+time.sleep(1)
 d.keyevent("back")
+time.sleep(1)
 d.keyevent("back")
+time.sleep(1)
 import os
 os.system("python shuangrengduizhan.py")
