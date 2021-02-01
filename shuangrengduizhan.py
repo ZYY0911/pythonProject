@@ -49,13 +49,8 @@ while i <= 5:
             i = i + 1
             time.sleep(3)
         continue
-    finally:
-        if d.xpath("//android.view.View[@text='继续挑战']").exists:
-            break
-
-d.toast.show("答题结束")
 print("答题完成,返回一次")
-d.keyevent("back")
+d.xpath("//android.view.View[@text='继续挑战']").click()
 time.sleep(1)
 d.keyevent("back")
 ctx = d.watch_context()
@@ -64,4 +59,4 @@ ctx.wait_stable()  # 等待界面不在有弹窗了
 ctx.stop()
 d.keyevent("back")
 d.keyevent("back")
-os.system("python readermodel.py")
+os.system("python zhengshangyou.py")

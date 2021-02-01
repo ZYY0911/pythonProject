@@ -47,6 +47,7 @@ while j <= 6:
         else:
             print("回答正确")
             j = j + 1
+            time.sleep(2)
     except Exception:
         j = j - 1
         continue

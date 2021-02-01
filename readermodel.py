@@ -48,7 +48,7 @@ for j in range(2):
     d.send_keys("习近平同玻利维亚总统阿尔塞通电话,习近平听取贺一诚述职报告")  # adb广播输入
     d.set_fastinput_ime(False)  # 切换成正常的输入法
     d.send_action("search")  # 模拟输入法的搜索
-    time.sleep(1)
+    time.sleep(2)
     d.xpath("//android.widget.TextView[@text='发布']").click()
     time.sleep(1)
     d.xpath("//android.widget.TextView[@text='删除']").click()
