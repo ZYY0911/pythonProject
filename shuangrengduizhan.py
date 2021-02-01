@@ -23,7 +23,7 @@ d.xpath(
 time.sleep(1)
 d.click(552 + 465 / 2, 816 + 480 / 2)
 i = 0
-while i <= 5:
+while i <= 4:
     try:
         info_content = str(d.xpath("//android.widget.ListView/preceding-sibling::android.view.View[1]").get_text())
         option_elements = d.xpath(
@@ -46,7 +46,6 @@ while i <= 5:
     except Exception:
         if len(option_elements) > 0:
             option_elements[0].click()
-            i = i + 1
             time.sleep(3)
         continue
 print("答题完成,返回一次")
@@ -57,6 +56,9 @@ ctx = d.watch_context()
 ctx.when("退出").click()
 ctx.wait_stable()  # 等待界面不在有弹窗了
 ctx.stop()
+time.sleep(1)
 d.keyevent("back")
+time.sleep(1)
 d.keyevent("back")
+time.sleep(1)
 os.system("python zhengshangyou.py")

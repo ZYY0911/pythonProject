@@ -44,6 +44,7 @@ while j <= 6:
             d.xpath("//android.view.View[@text='分享就能复活']").click()
             d.keyevent("back")
             print("回答错误")
+            time.sleep(2)
         else:
             print("回答正确")
             j = j + 1

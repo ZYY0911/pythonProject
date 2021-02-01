@@ -4,7 +4,7 @@ import os
 from mysqlpy import getAns
 def model():
     j = 0
-    while j <= 5:
+    while j <= 4:
         time.sleep(1)
         type_question = str(d.xpath("//*[@text='填空题' or @text='单选题'or @text='多选题']").get_text())
         print(type_question)
@@ -76,8 +76,15 @@ d(text='我要答题', className='android.widget.TextView').click()
 d.xpath("每日答题").click()
 model()
 sorce = d.xpath("//android.view.View[starts-with(@text, '+')]").get_text()
-if  sorce!="5":
+print(sorce)
+if sorce!="+5":
+    d.xpath('//*[@text="再来一组"]').click()
     model()
-else:
-    os.system("python readermodel.py")
+time.sleep(1)
+d.keyevent('back')
+time.sleep(1)
+d.keyevent('back')
+time.sleep(1)
+d.keyevent('back')
+os.system("python readermodel.py")
 
